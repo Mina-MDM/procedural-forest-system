@@ -91,7 +91,7 @@ capabilities:
   attributes, including height and slope, as well as procedural humidity
   and custom masks.
 
-  ![Hero](../Example/hou_ue.jpg)
+  ![Hero](../Media/hou_ue.jpg)
 
 **System Architecture**
 
@@ -101,39 +101,23 @@ required by subsequent stages.
 
 **Architecture Flow**
 
-Terrain
-
-↓
-
-Environment Attributes
-
-↓
-
-General Density
-
-↓
-
-Tree Layer
-
-↓
-
-Tree Influence
-
-↓
-
-Bush Layer
-
-↓
-
-Bush Influence
-
-↓
-
-Grass Layer
-
-↓
-
-Final Vegetation
+            Terrain
+               ↓
+    Environment Attributes
+               ↓
+        General Density
+               ↓
+          Tree Layer     
+               ↓
+        Tree Influence
+               ↓
+           Bush Layer
+               ↓
+         Bush Influence
+               ↓
+          Grass Layer
+               ↓
+       Final Vegetation
 
 ![Node graph](../Media/architecture.jpg)
 
@@ -438,25 +422,16 @@ affects the density of another.
 
 The primary vegetation-to-vegetation dependencies are:
 
-Trees
-
-↓
-
-├── tree_influencebush → Bush Density → Bushes
-
-│
-
-└── tree_influencegrass → Grass Density
-
-Bushes
-
-↓
-
-bush_influence
-
-↓
-
-Grass Density
+         Trees
+           ↓
+           ├── tree_influencebush → Bush Density → Bushes
+           │
+           └── tree_influencegrass → Grass Density
+        Bushes
+           ↓
+     bush_influence
+           ↓
+     Grass Density
 
 Grass Density is therefore affected by both tree_influencegrass and
 bush_influence.
@@ -507,27 +482,21 @@ bush_influence reduces grass growth in affected areas.
 
 The complete vegetation interaction structure is:
 
-               Trees
-
-                  ↓
-
-         ┌────────┴────────┐
-
-         ↓                 ↓
-
-tree_influencebush   tree_influencegrass
-
-         ↓                \|
-
-  Bush Density             ↓
-
-         ↓            Grass Density **→** Grass
-
-       Bushes              ↑
-
-         ↓                \|
-
-   bush_influence ─────────┘
+                         Trees
+                           ↓
+              ┌────────────┴────────────┐
+              │                         │
+              ↓                         ↓
+     tree_influencebush          tree_influencegrass
+              │                         │
+              ↓                         ↓
+        Bush Density              Grass Density
+              │                         │
+              ↓                         ↓
+            Bushes                    Grass
+              │                         ↑
+              ↓                         │
+       bush_influence ──────────────────┘
 
 ![hero](../Media/hero-hou.jpg)
 
@@ -817,21 +786,21 @@ workflow of the Procedural Forest System. The system processes terrain,
 environmental data, vegetation layers, and vegetation influence in the
 following order:
 
-**Terrain Analysis**\
-↓\
-**Environmental Conditions**\
-↓\
-**Tree Distribution**\
-↓\
-**Tree Influence**\
-↓\
-**Bush Distribution**\
-↓\
-**Bush Influence**\
-↓\
-**Grass Distribution**\
-↓\
-**HeightField Visualization**
+     **Terrain Analysis**\
+              ↓\
+    **Environmental Conditions**\
+              ↓\
+     **Tree Distribution**\
+              ↓\
+      **Tree Influence**\
+              ↓\
+     **Bush Distribution**\
+              ↓\
+       **Bush Influence**\
+              ↓\
+      **Grass Distribution**\
+              ↓\
+    **HeightField Visualization**
 
 **1. Terrain Analysis**
 
