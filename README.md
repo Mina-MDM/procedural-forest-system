@@ -4,7 +4,7 @@ A rule-based procedural vegetation system developed in **Houdini** for environme
 
 The system uses terrain-derived environmental attributes and sequential vegetation dependencies to generate a procedural forest rather than treating each vegetation layer as an independent scatter.
 
-![Hero](../Media/hou_ue.jpg)
+![Hero](./Media/hou_ue.jpg)
 
 ## Overview
 
