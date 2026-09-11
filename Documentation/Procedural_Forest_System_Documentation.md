@@ -786,21 +786,21 @@ workflow of the Procedural Forest System. The system processes terrain,
 environmental data, vegetation layers, and vegetation influence in the
 following order:
 
-     **Terrain Analysis**\
-              ↓\
-    **Environmental Conditions**\
-              ↓\
-     **Tree Distribution**\
-              ↓\
-      **Tree Influence**\
-              ↓\
-     **Bush Distribution**\
-              ↓\
-       **Bush Influence**\
-              ↓\
-      **Grass Distribution**\
-              ↓\
-    **HeightField Visualization**
+       Terrain Analysis
+              ↓
+    Environmental Conditions
+              ↓
+      Tree Distribution
+              ↓
+       Tree Influence
+              ↓
+       Bush Distribution
+              ↓
+        Bush Influence
+              ↓
+     Grass Distribution
+              ↓
+    HeightField Visualizatio
 
 **1. Terrain Analysis**
 
