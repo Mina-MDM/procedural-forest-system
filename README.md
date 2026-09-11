@@ -158,7 +158,7 @@ The full documentation covers:
 * Limitations
 * Future improvements
 
-[**Full Documentation:**](./Documentation/Procedural_Forest_System_Documentation.md)
+[**Full Documentation**](./Documentation/Procedural_Forest_System_Documentation.md)
 
 ## Project Focus
 
