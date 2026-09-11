@@ -89,6 +89,8 @@ capabilities:
   attributes, including height and slope, as well as procedural humidity
   and custom masks.
 
+  ![Hero](../Example/hero.jpg)
+
 **System Architecture**
 
 The **Procedural Forest System** uses a sequential, dependency-based
@@ -130,6 +132,8 @@ Grass Layer
 ↓
 
 Final Vegetation
+
+![Node graph](../Media/architecture.jpg)
 
 **Architecture Stages**
 
@@ -426,6 +430,8 @@ The **Interaction Model** defines the dependencies between vegetation
 layers and describes how the distribution of one vegetation layer
 affects the density of another.
 
+![Interaction](../Media/Interaction.gif)
+
 **Vegetation Dependencies**
 
 The primary vegetation-to-vegetation dependencies are:
@@ -548,6 +554,8 @@ The **User Controls** section defines the exposed parameters used to
 control terrain processing, custom mask processing, and vegetation
 generation. Parameter behavior is documented separately from the
 generated density and influence attributes.
+
+![Parameters](../Media/parameters.jpg)  ![Parameters](../Media/parameters2.jpg)
 
 **Terrain**
 
@@ -761,6 +769,8 @@ by the points.</td>
 </tbody>
 </table>
 
+![Procedural regeneration](../Media/procedural_regeneration.gif)
+
 **Parameter and Attribute Distinction**
 
 The **Density** parameters specify the number of points per square meter
@@ -853,6 +863,9 @@ The system then generates the general vegetation mask from humidity and
 slope and applies the configured custom-mask operations. This produces
 base_density and subsequently density_mask.
 
+![Environmental conditions breakdown](../Media/conditions_breakdown.jpg)
+![Environmental conditions](../Media/conditions.gif)
+
 **3. Custom Mask Implementation**
 
 Custom masks support two operation modes:
@@ -896,6 +909,8 @@ These operations produce the resulting density_mask.
 
 **See**: *Vegetation Layers → General Density*
 
+![Custom mask](../Media/custom_mask.gif)
+
 **4. Tree Density**
 
 The system generates tree_density by applying the additional slope
@@ -920,6 +935,8 @@ to the tree instances.
 After tree distribution, an additional random value is applied to the
 pscale of each scattered tree point. This randomly increases the scale
 used for the tree influence calculation.
+
+![Tree influence](../Media/treeinfluence_breakdown.jpg)
 
 The tree influence mask is generated from the modified tree points,
 procedural noise, and a wave-shaped falloff ramp.
@@ -1074,18 +1091,12 @@ supplied geometries are used as instances during scatter distribution.
 
 **Results / Examples**
 
-The documented example cases for the **Procedural Forest System** are:
+![Example](../Example/example.jpg)
+  
+![Example](../Example/example2.jpg)
 
-- **Humid / Dense**
-
-- **Dry / Sparse**
-
-- **Steep Terrain**
-
-- **Custom Mask**
-
-- **Different Seeds**
-
+![Example](../Example/example4.jpg)
+  
 **Performance**
 
 Performance depends on terrain resolution, terrain size, vegetation
@@ -1103,6 +1114,8 @@ The **Procedural Forest System** has been tested with:
 - **Unreal Engine:** 5.2.1
 
 The system can be integrated into Unreal Engine through Houdini Engine.
+
+![Unreal engine integration](../Media/integration.gif)
 
 **Integration Notes**
 
