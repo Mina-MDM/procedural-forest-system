@@ -62,6 +62,8 @@ The system determines **where and under what conditions vegetation is
 distributed** across the terrain. It does not define how the vegetation
 assets themselves are modeled.
 
+![Hero](../Example/hero.jpg)
+
 **System Goal**
 
 The **Procedural Forest System** is designed to provide the following
@@ -89,7 +91,7 @@ capabilities:
   attributes, including height and slope, as well as procedural humidity
   and custom masks.
 
-  ![Hero](../Example/hero.jpg)
+  ![Hero](../Example/hou_ue.jpg)
 
 **System Architecture**
 
@@ -272,6 +274,8 @@ generation logic of the **Procedural Forest System**. Each layer is
 documented by its inputs, governing rules, density logic, variation, and
 output.
 
+![Interaction](../Media/Interaction.gif)
+
 **1. General Density**
 
 The **General Density** layer establishes the general vegetation mask
@@ -430,8 +434,6 @@ The **Interaction Model** defines the dependencies between vegetation
 layers and describes how the distribution of one vegetation layer
 affects the density of another.
 
-![Interaction](../Media/Interaction.gif)
-
 **Vegetation Dependencies**
 
 The primary vegetation-to-vegetation dependencies are:
@@ -505,27 +507,29 @@ bush_influence reduces grass growth in affected areas.
 
 The complete vegetation interaction structure is:
 
-Trees
+               Trees
 
-↓
+                  ↓
 
-┌────────┴────────┐
+         ┌────────┴────────┐
 
-↓ ↓
+         ↓                 ↓
 
-tree_influencebush tree_influencegrass
+tree_influencebush   tree_influencegrass
 
-↓ \|
+         ↓                \|
 
-Bush Density ↓
+  Bush Density             ↓
 
-↓ Grass Density **→** Grass
+         ↓            Grass Density **→** Grass
 
-Bushes ↑
+       Bushes              ↑
 
-↓ \|
+         ↓                \|
 
-bush_influence ─────────┘
+   bush_influence ─────────┘
+
+![hero](../Media/hero-hou.jpg)
 
 **Attribute Flow**
 
@@ -555,7 +559,9 @@ control terrain processing, custom mask processing, and vegetation
 generation. Parameter behavior is documented separately from the
 generated density and influence attributes.
 
-![Parameters](../Media/parameters.jpg)  ![Parameters](../Media/parameters2.jpg)
+![Parameters](../Media/parameters.jpg)  
+
+![Parameters](../Media/parameters2.jpg)
 
 **Terrain**
 
@@ -864,6 +870,7 @@ slope and applies the configured custom-mask operations. This produces
 base_density and subsequently density_mask.
 
 ![Environmental conditions breakdown](../Media/conditions_breakdown.jpg)
+
 ![Environmental conditions](../Media/conditions.gif)
 
 **3. Custom Mask Implementation**
