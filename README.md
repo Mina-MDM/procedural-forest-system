@@ -4,6 +4,8 @@ A rule-based procedural vegetation system developed in **Houdini** for environme
 
 The system uses terrain-derived environmental attributes and sequential vegetation dependencies to generate a procedural forest rather than treating each vegetation layer as an independent scatter.
 
+![Hero](../Media/hou_ue.jpg)
+
 ## Overview
 
 The system determines **where and under what conditions vegetation is distributed** across the terrain.
@@ -64,7 +66,7 @@ Terrain Masks + General Density
               ↓
      Bush + Bush Influence
               ↓
-          Grass
+            Grass
 ```
 
 The internal stages are organized using Houdini subnets to keep the high-level network readable and separate system architecture from implementation details.
@@ -156,7 +158,7 @@ The full documentation covers:
 * Limitations
 * Future improvements
 
-**Full Documentation:** `Documentation/Procedural_Forest_System_Documentation.md`
+[**Full Documentation:**](./Documentation/Procedural_Forest_System_Documentation.md)
 
 ## Project Focus
 
